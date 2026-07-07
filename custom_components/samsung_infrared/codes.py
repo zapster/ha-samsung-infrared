@@ -5,12 +5,6 @@ from __future__ import annotations
 from infrared_protocols.codes.samsung.tv import SamsungTVCode
 
 SAMSUNG_TV_CODES: dict[SamsungTVCode, int] = {
-
-EXTRA_SAMSUNG_TV_CODES: dict[str, int] = {
-    "power_on": 0xE0E09966,
-    "power_off": 0xE0E019E6,
-}
-
     SamsungTVCode.POWER: 0xE0E040BF,
     SamsungTVCode.SOURCE: 0xE0E0807F,
     SamsungTVCode.HDMI_1: 0xE0E0D02F,
@@ -58,4 +52,9 @@ EXTRA_SAMSUNG_TV_CODES: dict[str, int] = {
     SamsungTVCode.PLAY: 0xE0E0E01F,
     SamsungTVCode.PAUSE: 0xE0E0F00F,
     SamsungTVCode.STOP: 0xE0E0A25D,
+}
+
+EXTRA_SAMSUNG_TV_CODES: dict[str, int] = {
+    "power_on": 0xE0E09966,
+    "power_off": 0xE0E019E6,
 }
