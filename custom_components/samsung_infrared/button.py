@@ -9,7 +9,7 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddConfigEntryEntitiesCallback
 
-from .codes import SAMSUNG_TV_CODES, SamsungTVCode
+from .codes import EXTRA_SAMSUNG_TV_CODES, SAMSUNG_TV_CODES, SamsungTVCode
 from .const import CONF_DEVICE_TYPE, CONF_INFRARED_EMITTER_ENTITY_ID, SamsungDeviceType
 from .entity import SamsungIrEntity
 from .protocols import SamsungCommand
@@ -21,7 +21,7 @@ PARALLEL_UPDATES = 1
 class SamsungIrButtonEntityDescription(ButtonEntityDescription):
     """Describes Samsung IR button entity."""
 
-    command_code: SamsungTVCode
+    command_code: SamsungTVCode | str
 
 
 TV_BUTTON_DESCRIPTIONS: tuple[SamsungIrButtonEntityDescription, ...] = (
@@ -135,6 +135,16 @@ TV_BUTTON_DESCRIPTIONS: tuple[SamsungIrButtonEntityDescription, ...] = (
         translation_key="e_manual",
         command_code=SamsungTVCode.E_MANUAL,
     ),
+    SamsungIrButtonEntityDescription(
+        key="power_on",
+        translation_key="power_on",
+        command_code="power_on",
+    ),
+    SamsungIrButtonEntityDescription(
+        key="power_off",
+        translation_key="power_off",
+        command_code="power_off",
+    ),
 )
 
 
@@ -175,5 +185,9 @@ class SamsungIrButton(SamsungIrEntity, InfraredEmitterConsumerEntity, ButtonEnti
     @override
     async def async_press(self) -> None:
         """Press the button."""
-        code = SAMSUNG_TV_CODES[self.entity_description.command_code]
+        code = (
+            EXTRA_SAMSUNG_TV_CODES[self.entity_description.command_code]
+            if isinstance(self.entity_description.command_code, str)
+            else SAMSUNG_TV_CODES[self.entity_description.command_code]
+        )
         await self._send_command(SamsungCommand(data=code))

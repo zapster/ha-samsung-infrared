@@ -56,7 +56,9 @@
       "tools": { "name": "Tools" },
       "browser": { "name": "Browser" },
       "ad_subtitle": { "name": "AD/Subtitle" },
-      "e_manual": { "name": "e-Manual" }
+      "e_manual": { "name": "e-Manual" },
+      "power_on": { "name": "Power on" },
+      "power_off": { "name": "Power off" }
     }
   }
 }
