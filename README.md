@@ -16,6 +16,8 @@ Use HACS as a custom integration repository, or copy
 Restart Home Assistant, then add **Samsung Infrared** from **Settings >
 Devices & services > Add integration**.
 
+Looking for Pioneer receiver support? See [ha-pioneer-infrared](https://github.com/zapster/ha-pioneer-infrared).
+
 ## Development
 
 Local checks that do not require a Home Assistant checkout:
