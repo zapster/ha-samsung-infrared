@@ -1,0 +1,27 @@
+[project]
+name = "ha-samsung-infrared"
+version = "0.1.0"
+description = "Custom Home Assistant integration for IR-controlled Samsung devices"
+requires-python = ">=3.13"
+dependencies = [
+  "homeassistant>=2026.4.0",
+]
+
+[tool.ruff]
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+  "ARG001",
+  "D203",
+  "D213",
+  "FBT001",
+  "TC002",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["INP001", "PLR2004", "S101"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

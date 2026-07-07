@@ -1,0 +1,12 @@
+{
+  "domain": "samsung_infrared",
+  "name": "Samsung Infrared",
+  "codeowners": ["@zapster"],
+  "config_flow": true,
+  "dependencies": ["infrared"],
+  "documentation": "https://github.com/zapster/ha-samsung-infrared",
+  "integration_type": "device",
+  "iot_class": "assumed_state",
+  "issue_tracker": "https://github.com/zapster/ha-samsung-infrared/issues",
+  "version": "0.1.0"
+}
