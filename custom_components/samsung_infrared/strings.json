@@ -11,8 +11,7 @@
     },
     "abort": {
       "already_configured": "This device profile is already configured with this infrared emitter.",
-      "no_emitters": "No infrared emitter entities are available.",
-      "invalid_source": "Invalid source \"{invalid_source}\". Valid sources: {valid_sources}"
+      "no_emitters": "No infrared emitter entities are available."
     }
   },
   "selector": {
@@ -58,21 +57,6 @@
       "browser": { "name": "Browser" },
       "ad_subtitle": { "name": "AD/Subtitle" },
       "e_manual": { "name": "e-Manual" }
-    }
-  },
-  "media_player": {
-    "samsung_ir_tv": {
-      "state_attributes": {
-        "source": {
-          "state": {
-            "tv": "TV",
-            "hdmi_1": "HDMI 1",
-            "hdmi_2": "HDMI 2",
-            "hdmi_3": "HDMI 3",
-            "hdmi_4": "HDMI 4"
-          }
-        }
-      }
     }
   }
 }
